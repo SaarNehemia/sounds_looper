@@ -12,8 +12,9 @@ from PyQt5.QtGui import QKeySequence, QFont
 pygame.mixer.init()
 pygame.mixer.set_num_channels(20)
 
+SOUNDS_FOLDER = 'sounds/notes'
 
-def get_wav_files(folder="sounds"):
+def get_wav_files(folder=SOUNDS_FOLDER):
     return sorted([f for f in os.listdir(folder) if f.lower().endswith(".wav")])
 
 
@@ -166,7 +167,7 @@ class SoundLooper(QWidget):
         self.layout.addLayout(self.controls_layout)
 
     def load_buttons(self, rows, cols):
-        files = get_wav_files("sounds")
+        files = get_wav_files()
         keys = [
             '1', '2', '3', '4', '5',
             'Q', 'W', 'E', 'R', 'T',
@@ -206,7 +207,7 @@ class SoundLooper(QWidget):
 
         for index in range(max_buttons):
             row, col = divmod(index, cols)
-            sound_path = os.path.join("sounds", files[index])
+            sound_path = os.path.join(SOUNDS_FOLDER, files[index])
             btn = SoundButton(sound_path, keys[index], index, color_palette[index], self)
             self.grid.addWidget(btn, row, col)
             self.buttons.append(btn)
