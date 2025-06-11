@@ -13,7 +13,7 @@ pygame.mixer.init()
 pygame.mixer.set_num_channels(20)
 
 # SOUNDS_FOLDER = 'sounds/notes'
-SOUNDS_FOLDER = r"C:\Users\saar.nehemia\PycharmProjects\auto_tune\sounds\sad_trumpet"
+SOUNDS_FOLDER = r"C:\Users\saar.nehemia\PycharmProjects\sounds_looper\sounds\sad_trumpet"
 
 
 def get_wav_files(folder=SOUNDS_FOLDER):
