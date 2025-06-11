@@ -12,10 +12,14 @@ from PyQt5.QtGui import QKeySequence, QFont
 pygame.mixer.init()
 pygame.mixer.set_num_channels(20)
 
-SOUNDS_FOLDER = 'sounds/notes'
+# SOUNDS_FOLDER = 'sounds/notes'
+SOUNDS_FOLDER = r"C:\Users\saar.nehemia\PycharmProjects\auto_tune\sounds\sad_trumpet"
+
 
 def get_wav_files(folder=SOUNDS_FOLDER):
-    return sorted([f for f in os.listdir(folder) if f.lower().endswith(".wav")])
+    return sorted([f for f in os.listdir(folder)
+                   if f.lower().endswith(".wav")
+                   or f.lower().endswith(".mp3")])
 
 
 class SoundButton(QPushButton):
